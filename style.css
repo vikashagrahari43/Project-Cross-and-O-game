@@ -1,191 +1,117 @@
-*{
-    margin : 0;
-    padding : 0;
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
-    
 }
-body{
-    background-color: #D0A98F;
-}
-h1{
-    margin-top:3%;
-    text-align: center;
-    font-size: 9vmin;
-}
-.container{
-    height:70vh;
-    width: 50vh;
-    
-}
-.game{
-    padding-top: 2%;
-    height: 60vh ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
+body {
+    background-color: #D0A98F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 10px;
 }
-.GameTable{
-    width:60vh;
+
+h1 {
+    margin-top: 3%;
+    font-size: 7vmin;
+}
+
+.game {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap:wrap;
-    gap: 0.5rem;
+    margin-top: 20px;
+    padding: 5%;
 }
-.box{
-    height:18vmin;
-    width:18vmin;
-    font-size: 3rem;
+
+.GameTable {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: min(90vw, 400px);
+}
+
+.box {
+    height: 25vw;
+    max-height: 120px;
+    width: 25vw;
+    max-width: 120px;
+    font-size: 2rem;
     border-radius: 1rem;
     background-color: #ECDCC9;
-    color:#28262F;
-}
-.resetbutton{
-    display:flex;
+    color: #28262F;
+    display: flex;
     justify-content: center;
-    
-    
+    align-items: center;
+    border: 2px solid #4D243D;
 }
-.reset{
-    margin-top:3%;
-    height:3rem;
-    width:6rem;
+
+.resetbutton {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+.reset {
+    height: 3rem;
+    width: 6rem;
     background-color: #4D243D;
-    color:white;
-    text-align:center;
+    color: white;
     font-size: 1rem;
     border-radius: 1rem;
-    margin-left:1rem;
-    border-color: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
-.winmsg{
-    margin-top:10%;
-    display:flex;
+
+.reset:hover {
+    background-color: #6A314D;
+}
+
+.winmsg {
+    margin-top: 10%;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 20%;
 }
-#msg{
-    font-size: 15vmin;
-    text-align: center;
-} 
-.hide{
+
+#msg {
+    font-size: 10vmin;
+}
+
+.hide {
     display: none;
 }
-@media (max-width: 768px){
-    h1{
-        font-size: 10vmin;
-        margin-top: 8%;
-    }
-    .container{
-        height:40vh;
-        width: 30vh;
-    }
-    .game{
-        padding-top: 2%;
-        height: 38vh ;
-        margin-top : 20%;
-        margin-bottom: 10%;
-    }
-    .box{
-        height:25vmin;
-        width:25vmin;
-        font-size: 3rem;
-        border-radius: 1rem;
-    }
-    .winmsg{
-        margin-top:30vh;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 50vh;
-    }
-    #msg{
-        font-size: 12vmin;
-        text-align: center;
-    } 
-    .hide{
-        display: none;
-    }
-
-}
-@media (min-width :820px ) and (max-width : 1180px){
 
 
-.game{
-    padding-top: 2%;
-    padding-left:20%;
-    height: 38vh ;
-    margin-top : 15%;
-    margin-bottom: 10%;
-    width:60vmin;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.box{
-    height:18vmin;
-    width:18vmin;
-    font-size: 3rem;
-    border-radius: 1rem;
-}
-}
-@media (min-width :1024px ) and (max-width: 1025px){
-
-
-    .game{
-        padding-top: 2%;
-        padding-left:33%;
-        margin-bottom: 7%;
+@media (max-width: 768px) {
+    h1 {
+        font-size: 6vmin;
     }
-}
-@media (min-width :912px ) and (max-width: 913px){
-
-
-    .game{
-        padding-top: 2%;
-        
-        margin-bottom: 7%;
+    .box {
+        font-size: 1.5rem;
     }
-}
-@media (min-width :767px ) and (max-width: 769px){
-
-
-    .game{
-        padding-top: 2%;
-        margin-bottom: 15%;
-    }
-    .box{
-        height:18vmin;
-        width:18vmin;
+    #msg {
+        font-size: 8vmin;
     }
 }
 
-@media (min-width :320px ) and (max-width: 375px){
-    .game{
-          margin-bottom: 15%;  
+@media (max-width: 480px) {
+    h1 {
+        font-size: 5vmin;
     }
-}
-@media (min-width :376px ) and (max-width: 425px){
-    .game{
-        width: 100%;
-        margin-bottom: 15%; 
+    .box {
+        font-size: 1.2rem;
     }
-    .box{
-        height:18vmin;
-        width:18vmin;
-    }
-}
-@media (min-width :390px ) and (max-width: 414px){
-    .game{
-        width: 100%;
-        margin-bottom: 15%;
-    }
-    .box{
-        height:25vmin;
-        width:25vmin;
+    #msg {
+        font-size: 6vmin;
     }
 }
